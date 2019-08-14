@@ -1,0 +1,12 @@
+{{> templates/open-document}}
+    {{#model}}
+    <title>{{title}} - Extended From Venia</title>
+    {{/model}}
+    {{^model}}
+    <title>Extended From Venia</title>
+    {{/model}}
+  {{> templates/open-body }}
+  {{> templates/default-initial-contents }}
+  {{> templates/seed-bundles}}
+{{> templates/close-document}}
+

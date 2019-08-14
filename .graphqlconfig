@@ -1,0 +1,16 @@
+{
+    "projects": {
+        "watchtime": {
+            "schemaPath": "lastCachedGraphQLSchema.json",
+            "extensions": {
+                "endpoints": {
+                    "default": "/graphql"
+                },
+                "validate-magento-pwa-queries": {
+                    "clients": ["apollo", "literal"],
+                    "filesGlob": "src/**/*.{js,graphql,gql}"
+                }
+            }
+        }
+    }
+}

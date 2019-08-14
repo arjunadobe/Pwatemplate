@@ -303,6 +303,31 @@ mkdir -p $templateName
 
 cd $templateName
 
+
+echo -e "\e[1;32m"
+echo "#########################"
+echo "# Step 7.1: Now cloning the sample templates from repository #"
+echo "#########################"
+echo -e "\e[00m"
+
+
+git clone https://github.com/arjunadobe/Pwatemplate.git
+
+cp -rf Pwatemplate/* .
+
+rm -rf .graphqlconfig
+
+rm -rf package.json
+
+rm -rf Pwatemplate
+
+
+echo -e "\e[1;32m"
+echo "#########################"
+echo "# Step 7.2 Creating package.json for your custom template #"
+echo "#########################"
+echo -e "\e[00m"
+
 cat > package.json << EOF
 {
   "name": "@$companyName/$templateName",
@@ -420,7 +445,7 @@ EOF
 
 echo -e "\e[1;32m"
 echo "#########################"
-echo "# Step 7.1: Creating .graphqlconfig for your custom theme #"
+echo "# Step 7.3: Creating .graphqlconfig for your custom theme #"
 echo "#########################"
 echo -e "\e[00m"
 
@@ -446,23 +471,6 @@ EOF
 
 mv graphqlconfig.json .graphqlconfig
 
-
-echo -e "\e[1;32m"
-echo "#########################"
-echo "# Step 7.2: Now cloning the sample templates from repository #"
-echo "#########################"
-echo -e "\e[00m"
-
-
-git clone https://github.com/arjunadobe/Pwatemplate.git
-
-cp -rf Pwatemplate/* .
-
-rm -rf .graphqlconfig
-
-rm -rf package.json
-
-rm -rf Pwatemplate
 
 
 echo -e "\e[1;32m"

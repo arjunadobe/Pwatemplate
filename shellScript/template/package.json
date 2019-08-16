@@ -15,7 +15,7 @@
     "build:dev": " ",
     "build:prod": "webpack -p --color --no-progress --profile --env.mode production",
     "clean": "rimraf dist",
-    "download-schema": "graphql get-schema --project $scriptName --insecure",
+    "download-schema": "graphql get-schema --project SCRIPTNAMES --insecure",
     "now-build": "../../pwa-studio/now-build.sh",
     "prepublishOnly": "yarn run build",
     "start": "node server.js",
@@ -23,7 +23,7 @@
     "stats": "webpack-bundle-analyzer dist/build-stats.json",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "storybook:build": "build-storybook -c .storybook -o storybook-dist",
-    "validate-queries": "yarn run download-schema && graphql validate-magento-pwa-queries --project $scriptName",
+    "validate-queries": "yarn run download-schema && graphql validate-magento-pwa-queries --project SCRIPTNAMES",
     "watch": "webpack-dev-server --progress --color --env.mode development"
   },
   "repository": "github:magento/pwa-studio",

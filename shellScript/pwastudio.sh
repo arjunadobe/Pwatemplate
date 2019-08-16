@@ -37,7 +37,7 @@ sed -i -e "s|\TEMPLATENAME|$templateName|" package.json
 sed -i -e "s|\VERSIONNUMBER|$versionNumber|" package.json
 sed -i -e "s|\TEMPLATESCRIPTNAME|$scriptName|" package.json
 sed -i -e "s|\COMPANYNAME|$companyName|" package.json
-rm -rf "/tmp/package.json"
+
 
 echo -e "\e[1;32m"
 echo "#########################"

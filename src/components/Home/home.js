@@ -7,7 +7,7 @@ class Home extends Component {
         return (
             <article className="Home">
                 <h1 className="Home-title">
-                    <span>Venia</span>
+                    <span>Extended From Venia-UI</span>
                 </h1>
                 <section className="Home-hero">
                     <h2 className="Home-hero-title">

@@ -1,9 +1,9 @@
 {{> templates/open-document}}
     {{#model}}
-    <title>{{title}} - Extended From Venia</title>
+    <title>{{title}} - Extended From Venia-UI</title>
     {{/model}}
     {{^model}}
-    <title>Extended From Venia</title>
+    <title>Extended From Venia-UI</title>
     {{/model}}
   {{> templates/open-body }}
   {{> templates/default-initial-contents }}

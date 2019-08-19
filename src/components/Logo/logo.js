@@ -11,8 +11,8 @@ const Logo = props => {
             className={classes.logo}
             src={logo}
             height="60px"
-            alt="Venia"
-            title="Venia"
+            alt="Extended From Venia-UI"
+            title="Extended From Venia-UI"
         />
     );
 };

@@ -1,5 +1,8 @@
 import { connect } from '@magento/venia-drivers';
-import { isEmptyCartVisible, isMiniCartMaskOpen } from 'parentSrc/selectors/cart';
+import {
+    isEmptyCartVisible,
+    isMiniCartMaskOpen
+} from 'parentSrc/selectors/cart';
 import { closeDrawer } from '../../actions/app';
 import {
     beginEditItem,

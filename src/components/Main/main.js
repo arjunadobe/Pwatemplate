@@ -4,8 +4,8 @@ import { useScrollLock } from '@magento/peregrine';
 
 import { mergeClasses } from 'parentSrc/classify';
 import Footer from '../Footer';
+import TopBar from '../TopBar';
 import Header from '../Header';
-import TopBar from 'src/components/TopBar';
 import defaultClasses from './main.css';
 
 const Main = props => {

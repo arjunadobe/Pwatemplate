@@ -1,5 +1,5 @@
 import { connect } from '@magento/venia-drivers';
-import { transformItems } from 'parentSrc/selectors/purchaseHistory';
+import { transformItems } from 'parentSrc/selectors//purchaseHistory';
 import PurchaseHistory from './purchaseHistory';
 import actions, { getPurchaseHistory } from '../../../actions/purchaseHistory';
 

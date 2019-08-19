@@ -1,5 +1,5 @@
 {{> templates/open-document}}
-    <title>Venia -- Not Found</title>
+    <title>Extended From Venia-UI -- Not Found</title>
   {{> templates/open-body }}
   <style>
         .i-c-notfound {

@@ -4,7 +4,7 @@ import { setContext } from 'apollo-link-context';
 import { Util } from '@magento/peregrine';
 import { Adapter } from '@magento/venia-drivers';
 import store from './store';
-import app from 'parentSrc/actions/app';
+import app from '@magento/venia-ui/lib/actions/app';
 import App, { AppContextProvider } from './components/App';
 import './index.css';
 
@@ -49,7 +49,7 @@ if (
 ) {
     window.addEventListener('load', () =>
         navigator.serviceWorker
-            .register('sw.js')
+            .register('/sw.js')
             .then(registration => {
                 console.log('Service worker registered: ', registration);
             })

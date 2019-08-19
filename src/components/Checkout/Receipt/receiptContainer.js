@@ -3,7 +3,7 @@ import { compose } from 'redux';
 import actions from '../../../actions/checkoutReceipt';
 import { createAccount } from '../../../actions/checkout';
 import Receipt from './receipt';
-import { getOrderInformation } from 'parentSrc/selectors/checkoutReceipt';
+import { getOrderInformation } from 'parentSrc/selectors//checkoutReceipt';
 
 const { reset } = actions;
 

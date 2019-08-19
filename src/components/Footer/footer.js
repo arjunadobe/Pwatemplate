@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import classify from 'parentSrc/classify';
-import defaultClasses from 'parentComponents/Footer/footer.css';
-import storeConfigDataQuery from 'parentSrc/queries/getStoreConfigData.graphql';
-import { Query } from 'parentSrc/drivers';
+import defaultClasses from './footer.css';
+import storeConfigDataQuery from '../../queries/getStoreConfigData.graphql';
+import { Query } from '@magento/venia-drivers';
 
 class Footer extends Component {
     static propTypes = {
@@ -29,9 +29,8 @@ class Footer extends Component {
                     <p className={classes.tileBody}>
                         <span>
                             this component is overwritten inside your own shop
-                            but the styling is still resolved from
-                            "venia-concept" because we don't need to change
-                            styling
+                            but the styling is still resolved from "venia-ui"
+                            because we don't need to change styling
                         </span>
                     </p>
                 </div>
@@ -44,6 +43,35 @@ class Footer extends Component {
                             Sign up and get access to our wonderful rewards
                             program.
                         </span>
+                    </p>
+                </div>
+                <div className={classes.tile}>
+                    <h2 className={classes.tileTitle}>
+                        <span>inquiries@example.com</span>
+                    </h2>
+                    <p className={classes.tileBody}>
+                        <span>
+                            Need to email us? Use the address above and
+                            we&rsquo;ll respond as soon as possible.
+                        </span>
+                    </p>
+                </div>
+                <div className={classes.tile}>
+                    <h2 className={classes.tileTitle}>
+                        <span>Live Chat</span>
+                    </h2>
+                    <p className={classes.tileBody}>
+                        <span>Mon – Fri: 5 a.m. – 10 p.m. PST</span>
+                        <br />
+                        <span>Sat – Sun: 6 a.m. – 9 p.m. PST</span>
+                    </p>
+                </div>
+                <div className={classes.tile}>
+                    <h2 className={classes.tileTitle}>
+                        <span>Help Center</span>
+                    </h2>
+                    <p className={classes.tileBody}>
+                        <span>Get answers from our community online.</span>
                     </p>
                 </div>
                 <small className={classes.copyright}>

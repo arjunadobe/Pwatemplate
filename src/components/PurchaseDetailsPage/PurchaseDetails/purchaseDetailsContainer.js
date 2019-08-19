@@ -10,7 +10,7 @@ import {
     getFetchingStatus,
     getOtherItems,
     getItem
-} from 'parentSrc/selectors';
+} from './selectors';
 
 // TODO: refactor to avoid all these selectors for simple object properties
 

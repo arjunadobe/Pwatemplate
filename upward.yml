@@ -230,7 +230,7 @@ customUrlResolver: customUrlResolverResult.data.urlResolver
 # shorthand syntax for a FileResolver.
 customUrlResolverResult:
   url: magentoGQL
-  query: './lib/queries/urlResolver.graphql'
+  query: './src/queries/urlResolver.graphql'
   variables:
     inline:
       urlKey: request.url.pathname
@@ -262,7 +262,7 @@ customProduct: customProductResult.data.productDetail.items.0
 # This object retrieves information about a specific product.
 customProductResult:
   url: magentoGQL
-  query: './lib/queries/getProductDetail.graphql'
+  query: './src/queries/getProductDetail.graphql'
   variables:
     inline:
       onServer: true
@@ -280,7 +280,7 @@ customCategory: customCategoryResult.data.category
 # This object retrieves information about a specific category.
 customCategoryResult:
   url: magentoGQL
-  query: './lib/queries/getCategory.graphql'
+  query: './src/queries/getCategory.graphql'
   variables:
     inline:
       onServer: true
@@ -301,7 +301,7 @@ customCmsPage: customCmsPageResult.data.cmsPage
 # This object retrieves information about a specific CMS page.
 customCmsPageResult:
   url: magentoGQL
-  query: './lib/queries/getCmsPage.graphql'
+  query: './src/queries/getCmsPage.graphql'
   variables:
     inline:
       onServer: true

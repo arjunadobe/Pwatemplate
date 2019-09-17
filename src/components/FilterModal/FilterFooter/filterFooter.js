@@ -8,8 +8,8 @@ import defaultClasses from './filterFooter.css';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import isObjectEmpty from 'parentSrc/util/isObjectEmpty';
-import { preserveQueryParams } from 'parentSrc/util/preserveQueryParams';
-import { persistentQueries } from 'parentSrc/shared/persistentQueries';
+import { preserveQueryParams } from '@magento/peregrine/lib/util/preserveQueryParams';
+import { persistentQueries } from '@magento/peregrine/lib/util/persistentQueries';
 class FilterFooter extends Component {
     static propTypes = {
         classes: PropTypes.shape({

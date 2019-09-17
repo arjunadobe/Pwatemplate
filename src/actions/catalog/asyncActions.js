@@ -1,7 +1,7 @@
 import actions from './actions';
 import mockData from './mockData';
-import { preserveQueryParams } from 'parentSrc/util/preserveQueryParams';
-import { persistentQueries } from 'parentSrc/shared/persistentQueries';
+import { preserveQueryParams } from '@magento/peregrine/lib/util/preserveQueryParams';
+import { persistentQueries } from '@magento/peregrine/lib/util/persistentQueries';
 
 export const serialize = (params, keys = [], isArray = false) => {
     const serialized = Object.keys(params)

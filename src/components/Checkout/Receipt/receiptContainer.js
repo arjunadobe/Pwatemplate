@@ -1,9 +1,9 @@
 import { connect, withRouter } from '@magento/venia-drivers';
 import { compose } from 'redux';
-import actions from '@magento/peregrine/lib/store/actions/checkoutReceipt';
-import { createAccount } from '@magento/peregrine/lib/store/actions/checkout';
+import actions from '../../../actions/checkoutReceipt';
+import { createAccount } from '../../../actions/checkout';
 import Receipt from './receipt';
-import { getOrderInformation } from '@magento/peregrine/lib/store/selectors/checkoutReceipt';
+import { getOrderInformation } from 'parentSrc/selectors//checkoutReceipt';
 
 const { reset } = actions;
 

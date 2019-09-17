@@ -11,7 +11,7 @@ import { connect, withRouter } from '@magento/venia-drivers';
 import { compose } from 'redux';
 import categoryQuery from '../../queries/getCategory.graphql';
 import isObjectEmpty from 'parentSrc/util/isObjectEmpty';
-import { getFilterParams } from '@magento/peregrine/lib/util/getFilterParamsFromUrl';
+import { getFilterParams } from 'parentSrc/util/getFilterParamsFromUrl';
 import CategoryContent from './categoryContent';
 import defaultClasses from './category.css';
 

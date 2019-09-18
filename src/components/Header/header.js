@@ -2,19 +2,19 @@ import React, { Suspense } from 'react';
 import { bool, func, object, shape, string } from 'prop-types';
 import { Menu as MenuIcon, Search as SearchIcon } from 'react-feather';
 
-import Icon from '../Icon';
-import Logo from '../Logo';
+import Icon from 'parentComponents/Icon';
+import Logo from 'parentComponents/Logo';
 import { Link, resourceUrl, Route } from '@magento/venia-drivers';
 
-import CartTrigger from './cartTrigger';
-import NavTrigger from './navTrigger';
-import SearchTrigger from './searchTrigger';
-import OnlineIndicator from '../OnlineIndicator';
+import CartTrigger from 'parentComponents/Header/cartTrigger';
+import NavTrigger from 'parentComponents/Header/navTrigger';
+import SearchTrigger from 'parentComponents/Header/searchTrigger';
+import OnlineIndicator from 'parentComponents/OnlineIndicator';
 
 import { mergeClasses } from 'parentSrc/classify';
-import defaultClasses from './header.css';
+import defaultClasses from 'parentComponents/Header/header.css';
 
-const SearchBar = React.lazy(() => import('../SearchBar'));
+const SearchBar = React.lazy(() => import('parentComponents/SearchBar'));
 
 const Header = props => {
     const {

@@ -1,4 +1,10 @@
 const { configureWebpack } = require('@magento/pwa-buildpack');
+const MediaBackendUrlFetcherPlugin = require('../../pwa-studio/packages/venia-concept/src/MediaBackendURLFetcherPlugin');
+const { DefinePlugin } = require('webpack');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+
+const NormalModuleOverridePlugin = require('./normalModuleOverrideWebpackPlugin');
+const componentOverrideMapping = require('./componentOverrideMapping');
 
 const path = require('path');
 const parentTheme = path.resolve(
@@ -51,6 +57,30 @@ module.exports = async env => {
             }
 
      };
+
+    config.plugins = [
+        ...config.plugins,
+        new DefinePlugin({
+            /**
+             * Make sure to add the same constants to
+             * the globals object in jest.config.js.
+             */
+            STORE_NAME: JSON.stringify('Extended Form Venia')
+        }),
+        new MediaBackendUrlFetcherPlugin(),
+        new HTMLWebpackPlugin({
+            filename: 'index.html',
+            template: './template.html',
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true
+            }
+        })
+    ];
+
+    config.plugins.push(
+        new NormalModuleOverridePlugin(componentOverrideMapping)
+    );
 
     // configureWebpack() returns a regular Webpack configuration object.
     // You can customize the build by mutating the object here, as in

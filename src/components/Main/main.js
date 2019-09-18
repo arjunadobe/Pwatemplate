@@ -3,10 +3,11 @@ import { bool, shape, string } from 'prop-types';
 import { useScrollLock } from '@magento/peregrine';
 
 import { mergeClasses } from 'parentSrc/classify';
-import Footer from '../Footer';
-import TopBar from '../TopBar';
-import Header from '../Header';
-import defaultClasses from './main.css';
+import Footer from 'src/components/Footer';
+
+import Header from 'src/components/Header';
+import TopBar from 'src/components/TopBar';
+import defaultClasses from 'parentComponents/Main/main.css';
 
 const Main = props => {
     const { children, hasBeenOffline, isMasked, isOnline } = props;

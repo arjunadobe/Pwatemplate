@@ -1,5 +1,6 @@
 .root {
-    background-color: #f26322;
+    background-color: rgb(var(--venia-grey));
+    box-shadow: 0 1px rgb(var(--venia-border));
     display: grid;
     grid-auto-columns: 100%;
     grid-auto-flow: row;
@@ -10,9 +11,7 @@
     top: 0;
     z-index: 10;
 }
-.root button {
-    color: #fff;
-}
+
 .open {
     composes: root;
 }

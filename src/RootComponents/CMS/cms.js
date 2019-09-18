@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CategoryList from '../../components/CategoryList';
+import CategoryList from 'parentComponents/CategoryList';
 import BannerShow from '../../components/Banner';
 
 export default class CMS extends Component {

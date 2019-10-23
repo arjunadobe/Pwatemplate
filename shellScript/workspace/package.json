@@ -57,7 +57,6 @@
     "watch:TEMPLATESCRIPTNAME":"yarn YARNTEMPLATESCRIPTNAME run watch"
   },
   "devDependencies":{
-    "@magento/babel-preset-peregrine":"~2.1.0",
     "@magento/eslint-config":"~1.4.1",
     "babel-eslint":"~10.0.1",
     "chalk":"~2.4.2",

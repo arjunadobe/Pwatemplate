@@ -170,7 +170,7 @@ echo -e "\e[00m"
 
 
 
-git clone https://github.com/magento-research/pwa-studio.git
+git clone https://github.com/magento-research/pwa-studio.git --branch master
 
 echo -e
 echo -e

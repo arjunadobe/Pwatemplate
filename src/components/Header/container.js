@@ -1,10 +1,7 @@
 import { connect } from '@magento/venia-drivers';
 
-import { toggleSearch } from '@magento/peregrine/lib/store/actions/app';
-import {
-    getCartDetails,
-    toggleCart
-} from '@magento/peregrine/lib/store/actions/cart';
+import { toggleSearch } from 'parentSrc/actions/app';
+import { getCartDetails, toggleCart } from 'parentSrc/actions/cart';
 
 import Header from './header';
 

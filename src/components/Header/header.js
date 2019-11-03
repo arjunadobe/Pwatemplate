@@ -12,7 +12,7 @@ import SearchTrigger from 'parentComponents/Header/searchTrigger';
 import OnlineIndicator from 'parentComponents/OnlineIndicator';
 
 import { mergeClasses } from 'parentSrc/classify';
-import defaultClasses from 'parentComponents/Header/header.css';
+import defaultClasses from './header.css';
 
 const SearchBar = React.lazy(() => import('parentComponents/SearchBar'));
 
@@ -51,7 +51,7 @@ const Header = props => {
                     hasBeenOffline={hasBeenOffline}
                     isOnline={isOnline}
                 />
-                <div className={classes.secondaryActions}>
+		<div className={classes.secondaryActions}>
                     <SearchTrigger
                         searchOpen={searchOpen}
                         toggleSearch={toggleSearch}

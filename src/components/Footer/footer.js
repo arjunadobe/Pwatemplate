@@ -1,87 +1,93 @@
-import React, { useEffect } from 'react';
-import { shape, string } from 'prop-types';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import { useQuery } from '@magento/peregrine';
-import { mergeClasses } from 'parentSrc/classify';
+import classify from 'parentSrc/classify';
 import defaultClasses from './footer.css';
-import storeConfigDataQuery from '../../queries/getStoreConfigData.graphql';
+import storeConfigDataQuery from '@magento/venia-ui/lib/queries/getStoreConfigData.graphql';
+import { Query } from '@magento/venia-drivers';
 
-const Footer = props => {
-    const classes = mergeClasses(defaultClasses, props.classes);
-    const [{ data, error }, { runQuery, setLoading }] = useQuery(
-        storeConfigDataQuery
-    );
+class Footer extends Component {
+    static propTypes = {
+        classes: PropTypes.shape({
+            copyright: PropTypes.string,
+            root: PropTypes.string,
+            tile: PropTypes.string,
+            tileBody: PropTypes.string,
+            tileTitle: PropTypes.string
+        })
+    };
 
-    useEffect(() => {
-        setLoading(true);
-        runQuery();
-    }, []); // eslint-disable-line
+    render() {
+        const { classes } = this.props;
 
-    useEffect(() => {
-        if (error) {
-            console.log('Error fetching copyright data.');
-        }
-    }, [error]);
+        return (
+            <footer className={classes.root}>
+                <div className={classes.tile}>
+                    <h2 className={classes.tileTitle}>
+                        <span>Your Account</span>
+                    </h2>
+                    <p className={classes.tileBody}>
+                        <span>
+                            Sign up and get access to our wonderful rewards
+                            program.
+                        </span>
+                    </p>
+                </div>
+                <div className={classes.tile}>
+                    <h2 className={classes.tileTitle}>
+                        <span>inquiries@example.com</span>
+                    </h2>
+                    <p className={classes.tileBody}>
+                        <span>
+                            Need to email us? Use the address above and
+                            we&rsquo;ll respond as soon as possible.
+                        </span>
+                    </p>
+                </div>
+                <div className={classes.tile}>
+                    <h2 className={classes.tileTitle}>
+                        <span>Live Chat</span>
+                    </h2>
+                    <p className={classes.tileBody}>
+                        <span>Mon – Fri: 5 a.m. – 10 p.m. PST</span>
+                        <br />
+                        <span>Sat – Sun: 6 a.m. – 9 p.m. PST</span>
+                    </p>
+                </div>
+                <div className={classes.tile}>
+                    <h2 className={classes.tileTitle}>
+                        <span>Help Center</span>
+                    </h2>
+                    <p className={classes.tileBody}>
+                        <span>Get answers from our community online.</span>
+                    </p>
+                </div>
+                <small className={classes.copyright}>
+                    <Query query={storeConfigDataQuery}>
+                        {({ loading, error, data }) => {
+                            if (error) {
+                                return (
+                                    <span className={classes.fetchError}>
+                                        Data Fetch Error:{' '}
+                                        <pre>{error.message}</pre>
+                                    </span>
+                                );
+                            }
+                            if (loading) {
+                                return (
+                                    <span className={classes.fetchingData}>
+                                        Fetching Data
+                                    </span>
+                                );
+                            }
 
-    let copyright = null;
-    if (data && data.storeConfig) {
-        copyright = <span>{data.storeConfig.copyright}</span>;
+                            return <span>{data.storeConfig.copyright}</span>;
+                        }}
+                    </Query>
+                </small>
+            </footer>
+        );
     }
+}
 
-    return (
-        <footer className={classes.root}>
-            <div className={classes.tile}>
-                <h2 className={classes.tileTitle}>
-                    <span>Your Account</span>
-                </h2>
-                <p className={classes.tileBody}>
-                    <span>
-                        Sign up and get access to our wonderful rewards program.
-                    </span>
-                </p>
-            </div>
-            <div className={classes.tile}>
-                <h2 className={classes.tileTitle}>
-                    <span>inquiries@example.com</span>
-                </h2>
-                <p className={classes.tileBody}>
-                    <span>
-                        Need to email us? Use the address above and we&rsquo;ll
-                        respond as soon as possible.
-                    </span>
-                </p>
-            </div>
-            <div className={classes.tile}>
-                <h2 className={classes.tileTitle}>
-                    <span>Live Chat</span>
-                </h2>
-                <p className={classes.tileBody}>
-                    <span>Mon – Fri: 5 a.m. – 10 p.m. PST</span>
-                    <br />
-                    <span>Sat – Sun: 6 a.m. – 9 p.m. PST</span>
-                </p>
-            </div>
-            <div className={classes.tile}>
-                <h2 className={classes.tileTitle}>
-                    <span>Help Center</span>
-                </h2>
-                <p className={classes.tileBody}>
-                    <span>Get answers from our community online.</span>
-                </p>
-            </div>
-            <small className={classes.copyright}>{copyright}</small>
-        </footer>
-    );
-};
-
-Footer.propTypes = {
-    classes: shape({
-        copyright: string,
-        root: string,
-        tile: string,
-        tileBody: string,
-        tileTitle: string
-    })
-};
-
-export default Footer;
+export default classify(defaultClasses)(Footer);
